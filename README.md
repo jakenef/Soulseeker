@@ -5,6 +5,8 @@ A native macOS menubar app for downloading music from [Soulseek](https://www.sls
 
 ## Install
 
+You'll need a [Soulseek account](https://www.slsknet.org/news/node/1) before you start.
+
 1. **Install sldl**
 
    Download the latest macOS binary from the [sldl releases page](https://github.com/fiso64/sldl/releases), unzip it, and move the `sldl` binary somewhere on your `$PATH` (e.g. `/usr/local/bin/sldl`). Make it executable:
@@ -32,7 +34,14 @@ A native macOS menubar app for downloading music from [Soulseek](https://www.sls
 
 3. **First launch**
 
-   Right-click `Soulseeker.app` → **Open** (one-time bypass for unsigned apps).
+   Right-click `Soulseeker.app` → **Open** (required once for unsigned apps).
+
+   On macOS 26 (Tahoe) or later, if the app is blocked even after right-clicking, run:
+
+   ```bash
+   sudo xattr -d com.apple.quarantine /Applications/Soulseeker.app
+   sudo codesign --force --deep -s - /Applications/Soulseeker.app
+   ```
 
 4. **Configure**
 
