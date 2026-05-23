@@ -14,6 +14,17 @@ A native macOS menubar app for downloading music from [Soulseek](https://www.sls
 
    > Note: sldl is not available via Homebrew. Manual download is required.
 
+   **macOS 26 (Tahoe) and later — fix "zsh: killed" on first run:**
+
+   macOS 26 enforces code signing more strictly. If `sldl --version` is silently killed, run:
+
+   ```bash
+   sudo xattr -d com.apple.quarantine /usr/local/bin/sldl
+   sudo codesign --force --deep -s - /usr/local/bin/sldl
+   ```
+
+   The first command removes the quarantine flag set by your browser. The second applies an ad-hoc signature that satisfies macOS's signing requirement.
+
 2. **Download Soulseeker**
 
    Grab the latest `Soulseeker-vX.Y.Z.zip` from [Releases](https://github.com/jakenef/Soulseeker/releases), unzip it, and move `Soulseeker.app` to your `/Applications` folder.
