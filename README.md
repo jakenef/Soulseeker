@@ -6,15 +6,17 @@ A native macOS menubar app for downloading music from [Soulseek](https://www.sls
 
 1. **Install sldl**
 
+   Download the latest macOS binary from the [sldl releases page](https://github.com/fiso64/sldl/releases), unzip it, and move the `sldl` binary somewhere on your `$PATH` (e.g. `/usr/local/bin/sldl`). Make it executable:
+
    ```bash
-   brew install sldl
+   chmod +x /usr/local/bin/sldl
    ```
 
-   Or download a binary from the [sldl releases page](https://github.com/fiso64/sldl/releases).
+   > Note: sldl is not available via Homebrew. Manual download is required.
 
 2. **Download Soulseeker**
 
-   Grab the latest `Soulseeker-vX.Y.Z.zip` from [Releases](../../releases), unzip it, and move `Soulseeker.app` to your `/Applications` folder.
+   Grab the latest `Soulseeker-vX.Y.Z.zip` from [Releases](https://github.com/jakenef/Soulseeker/releases), unzip it, and move `Soulseeker.app` to your `/Applications` folder.
 
 3. **First launch**
 
@@ -49,7 +51,7 @@ Requirements: Xcode 15+, [xcodegen](https://github.com/yonaskolb/XcodeGen)
 
 ```bash
 brew install xcodegen
-git clone <this-repo>
+git clone https://github.com/jakenef/Soulseeker.git
 cd Soulseeker
 xcodegen generate
 open Soulseeker.xcodeproj
@@ -64,4 +66,4 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
-GitHub Actions will build the app and attach a zip to the release automatically.
+GitHub Actions builds the app, zips it, and attaches it to the release automatically.
