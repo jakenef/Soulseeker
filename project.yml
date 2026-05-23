@@ -1,0 +1,33 @@
+name: Soulseeker
+options:
+  deploymentTarget:
+    macOS: "13.0"
+  defaultConfig: Debug
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+targets:
+  Soulseeker:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: Soulseeker
+    settings:
+      base:
+        INFOPLIST_FILE: Soulseeker/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakenef.soulseeker
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGNING_ALLOWED: "NO"
+  SoulseekerTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: SoulseekerTests
+    dependencies:
+      - target: Soulseeker
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakenef.soulseekerTests
