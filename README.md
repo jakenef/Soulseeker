@@ -1,4 +1,5 @@
 # Soulseeker
+<img width="758" height="564" alt="Screenshot 2026-05-22 at 6 57 08 PM" src="https://github.com/user-attachments/assets/e7f1d4c7-a848-4585-af17-654be73d9339" />
 
 A native macOS menubar app for downloading music from [Soulseek](https://www.slsknet.org) via [sldl](https://github.com/fiso64/sldl).
 
